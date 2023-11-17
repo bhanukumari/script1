@@ -1,0 +1,9 @@
+version: api/v1
+kind: BPService
+metadata:
+  name: cardgatewayservice-java
+spec:
+  application: plural
+  build_strategy: EVERY
+  external_name: cardgatewayservice-java
+  type: MICROSERVICE
