@@ -1,0 +1,9 @@
+---
+version: api/v1
+kind: BPService
+metadata:
+  name: bhanu
+spec:
+  build_strategy: EVERY
+  external_name: bhanu-app
+  application: plural

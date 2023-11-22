@@ -1,0 +1,19 @@
+version: api/v1
+kind: BPServiceCD
+metadata:
+  name: plural
+  application: pinelab
+  environment_master: dev
+  service: plural
+spec:
+    application_env: pluraldev
+    service_name: pinelab-ingress
+    image_name: pinelab-ingress
+    deployment_name: pinelab
+    deployment_rollback_validation: true
+    manifest_meta_data:
+      strategy: GIT_MANIFEST
+      manifest_git_repo: Plural_Repo_Kubernetes_Manifest
+      manifest_git_repo_branch: dev_branch
+      manifest_file_paths:
+      - "manifests/ingress/CardGatewayservice-Java/kongingress.yaml"

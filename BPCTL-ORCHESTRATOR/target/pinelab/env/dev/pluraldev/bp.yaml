@@ -1,0 +1,20 @@
+---
+version: api/v1
+kind: BPServiceEnv
+metadata:
+  name: pinelab-pluraldev-env
+  service: pinelab
+  application: plural
+spec:
+  application_env: pluraldev
+  manual_build: TRUE
+  manual_deploy: TRUE
+  application_job_template: Ingress-deploy
+  env_role_access:
+    - application_role: DEV
+      access: TRUE
+    - application_role: QA
+      access: FALSE
+    - application_role: DEVOPS
+      access: TRUE
+  environment_master: dev

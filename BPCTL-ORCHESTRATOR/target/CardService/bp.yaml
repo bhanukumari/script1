@@ -1,0 +1,9 @@
+---
+version: api/v1
+kind: BPService
+metadata:
+  name: CardService
+spec:
+  build_strategy: EVERY
+  external_name: CardService-app
+  application: plural

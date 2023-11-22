@@ -1,0 +1,19 @@
+version: api/v1
+kind: BPServiceCD
+metadata:
+  name: ${service}
+  application: ${application}
+  environment_master: dev
+  service: ${service}
+spec:
+    application_env: ${application_env}
+    service_name: ${service}-ingress
+    image_name: ${service}-ingress
+    deployment_name: ${service}
+    deployment_rollback_validation: true
+    manifest_meta_data:
+      strategy: GIT_MANIFEST
+      manifest_git_repo: Plural_Repo_Kubernetes_Manifest
+      manifest_git_repo_branch: dev_branch
+      manifest_file_paths:
+      - "manifests/ingress/CardGatewayservice-Java/kongingress.yaml"

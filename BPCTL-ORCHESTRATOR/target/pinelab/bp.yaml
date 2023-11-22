@@ -1,0 +1,9 @@
+---
+version: api/v1
+kind: BPService
+metadata:
+  name: pinelab
+spec:
+  build_strategy: EVERY
+  external_name: pinelab-app
+  application: plural
